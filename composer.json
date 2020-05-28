@@ -1,0 +1,43 @@
+{
+  "name": "flarumite/simple-discussion-views",
+  "description": "Add views to flarum discussions",
+  "type": "flarum-extension",
+  "require": {
+    "flarum/core": "^0.1.0-beta.13"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Michael V.",
+      "email": "michael@michaelbelgium.me",
+      "role": "Developer (Original)"
+    },
+    {
+      "name": "Ian Morland",
+      "email": "ian@flarumite.com",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/flarumite/simple-discussion-views/issues",
+    "source": "https://github.com/flarumite/simple-discussion-views"
+  },
+  "autoload": {
+    "psr-4": {
+      "Flarumite\\DiscussionViews\\": "src/"
+    }
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "Flarumite Simple Discussion Views",
+      "icon": {
+        "name": "far fa-eye",
+        "backgroundColor": "#008000",
+        "color": "#fff"
+      }
+    }
+  },
+  "conflict": {
+    "michaelbelgium/flarum-discussion-views": "*"
+  }
+}
