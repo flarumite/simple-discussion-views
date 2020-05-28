@@ -1,18 +1,27 @@
 <?php
+
+/*
+ * This file is part of flarumite/flarum-decontaminator.
+ *
+ * Copyright (c) 2020 Flarumite.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Flarumite\DiscussionViews\Listeners;
 
 use Flarum\Discussion\Event\Saving;
 
 class SaveDiscussionFromModal
 {
-	public function handle(Saving $event)
-	{
-		if(isset($event->data["attributes"]["views"]))
-		{
-			$discussion = $event->discussion;
+    public function handle(Saving $event)
+    {
+        if (isset($event->data['attributes']['views'])) {
+            $discussion = $event->discussion;
 
-			$discussion->view_count = $event->data["attributes"]["views"];
-			$discussion->save();
-		}
-	}
+            $discussion->view_count = $event->data['attributes']['views'];
+            $discussion->save();
+        }
+    }
 }

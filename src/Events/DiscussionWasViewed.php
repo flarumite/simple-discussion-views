@@ -1,17 +1,25 @@
 <?php
 
-namespace Flarumite\DiscussionViews\Events;
+/*
+ * This file is part of flarumite/flarum-decontaminator.
+ *
+ * Copyright (c) 2020 Flarumite.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
+namespace Flarumite\DiscussionViews\Events;
 
 use Flarum\Discussion\Discussion;
 use Flarum\User\User;
 
 class DiscussionWasViewed
 {
-    /** @var User $actor */
+    /** @var User */
     private $actor;
 
-    /** @var Discussion $discussion */
+    /** @var Discussion */
     private $discussion;
 
     /**
@@ -27,10 +35,10 @@ class DiscussionWasViewed
     /**
      * DiscussionWasViewed constructor.
      *
-     * @param User $viewer
+     * @param User       $viewer
      * @param Discussion $discussion
      */
-    public function __construct(User $actor, Discussion $discussion, String $ip, String $userAgent)
+    public function __construct(User $actor, Discussion $discussion, string $ip, string $userAgent)
     {
         $this->actor = $actor;
         $this->discussion = $discussion;
