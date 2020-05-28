@@ -10,14 +10,19 @@ This is a maintained fork of [michaelbelgium/flarum-discussion-views](https://gi
 One of the Flarum forums I manage, needed a lightweight discussion view tracker, with minimal settings and options. Turn it on and forget about it, so to speak.
 
 ### Features
-- Tracks how many times a discussion has been viewed and displays it per discussion on the discussionlist
+- Tracks how many times a discussion has been viewed and displays it per discussion on the discussionlist. _Note: does not track unique views, rather every view, both as guest and registered member_
 - Adds 2 sorting options: popular and unpopular
 - Adds 1 event which developers can listen for: `DiscussionWasViewed`
 - Adds 1 new permission where people can (re)set the viewcount of a discussion (default to admins)
+- Uses `view_count` column created on the `discussions` table, so should not impact load performance
+
+### To-do
+- Identify known crawlers, don't increase the view count for these visits
+- Notify discussion author if their discussion is viewed more than {configurable} times
 
 ### Installation
 
-Use [Bazaar](https://discuss.flarum.org/d/5151-flagrow-bazaar-the-extension-marketplace) or install manually with composer:
+Use [Bazaar](https://discuss.flarum.org/d/5151) or install manually with composer:
 
 ```sh
 composer require flarumite/simple-discussion-views
