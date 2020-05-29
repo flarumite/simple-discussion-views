@@ -33,4 +33,4 @@ composer require flarumite/simple-discussion-views
 - [![Donate](https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QCCXU72DC9LB4&source=url)
 - [Packagist](https://packagist.org/packages/flarumite/simple-discussion-views)
 - [GitHub](https://github.com/flarumite/simple-discussion-views)
-- [Discuss](https://discuss.flarum.org)
+- [Discuss](https://discuss.flarum.org/d/24002)
