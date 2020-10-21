@@ -10,8 +10,6 @@ export default function () {
 
     extend(DiscussionListItem.prototype, 'infoItems', function (items) {
         const views = this.attrs.discussion.views();
-        console.log(items);
-        items.add('discussion-views', abbreviateNumber(views));
-        console.log('here');
+        items.add('discussion-views', <span>{abbreviateNumber(views)}</span>);
     });
 }

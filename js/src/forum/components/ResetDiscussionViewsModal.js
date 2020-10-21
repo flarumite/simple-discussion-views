@@ -1,5 +1,6 @@
 import Modal from 'flarum/components/Modal';
 import Button from 'flarum/components/Button';
+import Stream from 'flarum/utils/Stream';
 
 export default class ResetDiscussionViewsModal extends Modal {
   oninit(vnode) {
@@ -7,7 +8,7 @@ export default class ResetDiscussionViewsModal extends Modal {
 
     this.discussion = this.attrs.discussion;
     this.currentViewsCount = this.attrs.discussion.views();
-    this.newViewsCount = m.prop(this.currentViewsCount);
+    this.newViewsCount = Stream(this.currentViewsCount);
   }
 
   content() {
