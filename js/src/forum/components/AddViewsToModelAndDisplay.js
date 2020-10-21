@@ -9,7 +9,9 @@ export default function () {
     Discussion.prototype.canReset = Model.attribute('canReset');
 
     extend(DiscussionListItem.prototype, 'infoItems', function (items) {
-        const discussion = this.props.discussion;
-        items.add('discussion-views', abbreviateNumber(discussion.views()));
+        const views = this.attrs.discussion.views();
+        console.log(items);
+        items.add('discussion-views', abbreviateNumber(views));
+        console.log('here');
     });
 }
