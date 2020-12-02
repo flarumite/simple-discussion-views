@@ -27,7 +27,7 @@ return [
 
     new Extend\Locales(__DIR__.'/resources/locale'),
 
-    (new Extend\Event)
+    (new Extend\Event())
         ->listen(Serializing::class, Listeners\AddDiscussionApiAttributes::class)
         ->listen(WillSerializeData::class, Listeners\AddDiscussionViewHandler::class)
         ->listen(WillGetData::class, Listeners\AddPopularSort::class)
