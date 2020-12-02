@@ -16,7 +16,6 @@ use Flarum\Discussion\Event\Saving;
 use Flarum\Extend;
 use Flarum\Extend\Frontend;
 use Flarumite\DiscussionViews\Listeners;
-use Illuminate\Contracts\Events\Dispatcher;
 
 return [
     (new Frontend('forum'))
@@ -28,10 +27,9 @@ return [
 
     new Extend\Locales(__DIR__.'/resources/locale'),
 
-    function (Dispatcher $events) {
-        $events->listen(Serializing::class, Listeners\AddDiscussionApiAttributes::class);
-        $events->listen(WillSerializeData::class, Listeners\AddDiscussionViewHandler::class);
-        $events->listen(WillGetData::class, Listeners\AddPopularSort::class);
-        $events->listen(Saving::class, Listeners\SaveDiscussionFromModal::class);
-    },
+    (new Extend\Event)
+        ->listen(Serializing::class, Listeners\AddDiscussionApiAttributes::class)
+        ->listen(WillSerializeData::class, Listeners\AddDiscussionViewHandler::class)
+        ->listen(WillGetData::class, Listeners\AddPopularSort::class)
+        ->listen(Saving::class, Listeners\SaveDiscussionFromModal::class),
 ];
