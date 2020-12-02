@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of flarumite/simple-discussion-views.
+ * This file is part of flarumite/flarum-decontaminator.
  *
  * Copyright (c) 2020 Flarumite.
  *
