@@ -12,25 +12,26 @@
 namespace Flarumite\DiscussionViews\Listeners;
 
 use Flarum\Api\Controller\ShowDiscussionController;
-use Flarum\Api\Event\WillSerializeData;
-use Flarum\Discussion\Discussion;
 use Flarumite\DiscussionViews\Events\DiscussionWasViewed;
 use Flarumite\DiscussionViews\Helpers;
+use Psr\Http\Message\ServerRequestInterface;
 
 class AddDiscussionViewHandler
 {
-    /**
-     * @param WillSerializeData $event
-     */
-    public function handle(WillSerializeData $event)
+    public function __invoke(ShowDiscussionController $controller, &$data, ServerRequestInterface $request)
     {
-        if ($event->isController(ShowDiscussionController::class)) {
-            /** @var Discussion $current_discussion */
-            $current_discussion = $event->data;
-            $current_discussion->view_count++;
+        /**
+         * @var \Flarum\User\User
+         */
+        $actor = $request->getAttribute('actor');
 
-            event(new DiscussionWasViewed($event->actor, $current_discussion, Helpers::getIpAddress(), Helpers::getUserAgentString()));
-            $current_discussion->save();
-        }
+        /**
+         * @var \Flarum\Discussion\Discussion $current_discussion
+         */
+        $current_discussion = $data;
+        $current_discussion->view_count++;
+        $current_discussion->save();
+
+        event(new DiscussionWasViewed($actor, $current_discussion, Helpers::getIpAddress(), Helpers::getUserAgentString()));
     }
 }

@@ -1,6 +1,6 @@
 {
   "name": "flarumite/simple-discussion-views",
-  "description": "Add views to flarum discussions",
+  "description": "Add view counts to discussions",
   "type": "flarum-extension",
   "require": {
     "flarum/core": ">=0.1.0-beta.15 <0.1.0-beta.16"
@@ -9,14 +9,21 @@
   "authors": [
     {
       "name": "IanM",
-      "email": "ian@flarumite.com",
+      "homepage": "https://discuss.flarum.org/u/ianm",
       "role": "Developer"
     }
   ],
   "support": {
     "issues": "https://github.com/flarumite/simple-discussion-views/issues",
-    "source": "https://github.com/flarumite/simple-discussion-views"
+    "source": "https://github.com/flarumite/simple-discussion-views",
+    "forum": "https://discuss.flarum.org/d/24002"
   },
+  "funding": [
+      {
+          "type": "website",
+          "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QCCXU72DC9LB4&source=url"
+      }
+  ],
   "autoload": {
     "psr-4": {
       "Flarumite\\DiscussionViews\\": "src/"
@@ -25,12 +32,7 @@
   "extra": {
     "flarum-extension": {
       "title": "Flarumite Simple Discussion Views",
-      "category": "feature",
-      "info": {
-          "donate": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QCCXU72DC9LB4&source=url",
-          "website": "https://test.flarumite.com",
-          "support": "https://discuss.flarum.org"
-      },
+      "category": "discussion",
       "icon": {
         "name": "far fa-eye",
         "backgroundColor": "#008000",

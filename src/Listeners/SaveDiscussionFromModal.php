@@ -18,6 +18,9 @@ class SaveDiscussionFromModal
     public function handle(Saving $event)
     {
         if (isset($event->data['attributes']['views'])) {
+            /**
+             * @var \Flarum\Discussion\Discussion
+             */
             $discussion = $event->discussion;
 
             $discussion->view_count = $event->data['attributes']['views'];

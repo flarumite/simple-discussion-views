@@ -53,11 +53,11 @@ export default class ResetDiscussionViewsModal extends Modal {
             this.attrs.discussion
                 .save({ views: newViews })
                 .then(() => {
-                    m.redraw.sync();
+                    m.redraw();
                 })
                 .catch((reason) => {
                     this.loading = false;
-                    console.log(reason);
+                    console.warn(reason);
                 });
         }
 

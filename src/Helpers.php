@@ -18,6 +18,7 @@ class Helpers
     public static function getIpAddress(): ?string
     {
         return Arr::get($_SERVER, 'HTTP_CLIENT_IP')
+            ?? Arr::get($_SERVER, 'HTTP_CF_CONNECTING_IP')
             ?? Arr::get($_SERVER, 'HTTP_X_FORWARDED_FOR')
             ?? Arr::get($_SERVER, 'REMOTE_ADDR');
     }
