@@ -20,12 +20,12 @@ use Psr\Http\Message\ServerRequestInterface;
 class AddDiscussionViewHandler
 {
     protected $events;
-    
+
     public function __construct(Dispatcher $events)
     {
         $this->events = $events;
     }
-    
+
     public function __invoke(ShowDiscussionController $controller, &$data, ServerRequestInterface $request)
     {
         /**
