@@ -17,20 +17,20 @@ use Flarum\User\User;
 class DiscussionWasViewed
 {
     /** @var User */
-    private $actor;
+    public $actor;
 
     /** @var Discussion */
-    private $discussion;
+    public $discussion;
 
     /**
      * @var string
      */
-    private $ip;
+    public $ip;
 
     /**
      * @var string
      */
-    private $userAgent;
+    public $userAgent;
 
     /**
      * DiscussionWasViewed constructor.
