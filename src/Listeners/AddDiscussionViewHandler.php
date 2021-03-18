@@ -28,7 +28,7 @@ class AddDiscussionViewHandler
     {
         $this->bus = $bus;
     }
-    
+
     public function __invoke(ShowDiscussionController $controller, &$data, ServerRequestInterface $request)
     {
         /**
