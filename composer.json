@@ -3,7 +3,7 @@
   "description": "Add view counts to discussions",
   "type": "flarum-extension",
   "require": {
-    "flarum/core": ">=0.1.0-beta.15 <0.1.0-beta.16"
+    "flarum/core": "^0.1.0-beta.16"
   },
   "license": "MIT",
   "authors": [
@@ -18,12 +18,6 @@
     "source": "https://github.com/flarumite/simple-discussion-views",
     "forum": "https://discuss.flarum.org/d/24002"
   },
-  "funding": [
-      {
-          "type": "website",
-          "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QCCXU72DC9LB4&source=url"
-      }
-  ],
   "autoload": {
     "psr-4": {
       "Flarumite\\DiscussionViews\\": "src/"
@@ -32,7 +26,7 @@
   "extra": {
     "flarum-extension": {
       "title": "Flarumite Simple Discussion Views",
-      "category": "discussion",
+      "category": "feature",
       "icon": {
         "name": "far fa-eye",
         "backgroundColor": "#008000",

@@ -1,8 +1,8 @@
-import { extend } from 'flarum/extend';
-import Model from 'flarum/Model';
-import Discussion from 'flarum/models/Discussion';
-import DiscussionListItem from 'flarum/components/DiscussionListItem';
-import abbreviateNumber from 'flarum/utils/abbreviateNumber';
+import { extend } from 'flarum/common/extend';
+import Model from 'flarum/common/Model';
+import Discussion from 'flarum/common/models/Discussion';
+import DiscussionListItem from 'flarum/common/components/DiscussionListItem';
+import abbreviateNumber from 'flarum/common/utils/abbreviateNumber';
 
 export default function () {
     Discussion.prototype.views = Model.attribute('views');

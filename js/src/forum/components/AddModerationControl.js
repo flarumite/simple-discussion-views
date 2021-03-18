@@ -1,6 +1,6 @@
-import { extend } from 'flarum/extend';
-import Button from 'flarum/components/Button';
-import DiscussionControls from 'flarum/utils/DiscussionControls';
+import { extend } from 'flarum/common/extend';
+import Button from 'flarum/common/components/Button';
+import DiscussionControls from 'flarum/common/utils/DiscussionControls';
 import ResetDiscussionViewsModal from './ResetDiscussionViewsModal';
 
 export default function () {

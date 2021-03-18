@@ -14,10 +14,21 @@ namespace Flarumite\DiscussionViews\Listeners;
 use Flarum\Api\Controller\ShowDiscussionController;
 use Flarumite\DiscussionViews\Events\DiscussionWasViewed;
 use Flarumite\DiscussionViews\Helpers;
+use Illuminate\Contracts\Events\Dispatcher;
 use Psr\Http\Message\ServerRequestInterface;
 
 class AddDiscussionViewHandler
 {
+    /**
+     * @var Dispatcher
+     */
+    public $bus;
+
+    public function __construct(Dispatcher $bus)
+    {
+        $this->bus = $bus;
+    }
+    
     public function __invoke(ShowDiscussionController $controller, &$data, ServerRequestInterface $request)
     {
         /**
@@ -32,6 +43,6 @@ class AddDiscussionViewHandler
         $current_discussion->view_count++;
         $current_discussion->save();
 
-        event(new DiscussionWasViewed($actor, $current_discussion, Helpers::getIpAddress(), Helpers::getUserAgentString()));
+        $this->bus->dispatch(new DiscussionWasViewed($actor, $current_discussion, Helpers::getIpAddress(), Helpers::getUserAgentString()));
     }
 }

@@ -37,7 +37,7 @@ return [
         ->attribute('views', function (DiscussionSerializer $serializer, AbstractModel $discussion) {
             return $discussion->view_count;
         })
-        ->mutate(AddAttributesBasedOnPermission::class),
+        ->attributes(AddAttributesBasedOnPermission::class),
 
     (new Extend\ApiController(ShowDiscussionController::class))
         ->prepareDataForSerialization(AddDiscussionViewHandler::class),
