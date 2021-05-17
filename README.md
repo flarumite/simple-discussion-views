@@ -1,4 +1,4 @@
-[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/flarumite/simple-discussion-views/blob/master/LICENSE) [![Latest Stable Version](https://img.shields.io/packagist/v/flarumite/simple-discussion-views.svg)](https://packagist.org/packages/flarumite/simple-discussion-views) [![Total Downloads](https://img.shields.io/packagist/dt/flarumite/simple-discussion-views.svg)](https://packagist.org/packages/flarumite/simple-discussion-views) [![Donate](https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QCCXU72DC9LB4&source=url)
+[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/flarumite/simple-discussion-views/blob/master/LICENSE) [![Latest Stable Version](https://img.shields.io/packagist/v/flarumite/simple-discussion-views.svg)](https://packagist.org/packages/flarumite/simple-discussion-views) [![Total Downloads](https://img.shields.io/packagist/dt/flarumite/simple-discussion-views.svg)](https://packagist.org/packages/flarumite/simple-discussion-views)
 
 
 
@@ -28,7 +28,6 @@ composer require flarumite/simple-discussion-views
 
 ### Links
 
-- [![Donate](https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QCCXU72DC9LB4&source=url)
 - [Packagist](https://packagist.org/packages/flarumite/simple-discussion-views)
 - [GitHub](https://github.com/flarumite/simple-discussion-views)
 - [Discuss](https://discuss.flarum.org/d/24002)
