@@ -38,7 +38,7 @@ class DiscussionWasViewed
      * @param User       $viewer
      * @param Discussion $discussion
      */
-    public function __construct(User $actor, Discussion $discussion, string $ip, string $userAgent)
+    public function __construct(User $actor, Discussion $discussion, ?string $ip, ?string $userAgent)
     {
         $this->actor = $actor;
         $this->discussion = $discussion;
