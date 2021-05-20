@@ -12,9 +12,11 @@
 namespace Flarumite\DiscussionViews\Listeners;
 
 use Flarum\Api\Controller\ShowDiscussionController;
+use Flarum\Settings\SettingsRepositoryInterface;
 use Flarumite\DiscussionViews\Events\DiscussionWasViewed;
 use Flarumite\DiscussionViews\Helpers;
 use Illuminate\Contracts\Events\Dispatcher;
+use Jaybizzle\CrawlerDetect\CrawlerDetect;
 use Psr\Http\Message\ServerRequestInterface;
 
 class AddDiscussionViewHandler
@@ -24,9 +26,15 @@ class AddDiscussionViewHandler
      */
     public $bus;
 
-    public function __construct(Dispatcher $bus)
+    /**
+     * @var SettingsRepositoryInterface
+     */
+    public $settings;
+
+    public function __construct(Dispatcher $bus, SettingsRepositoryInterface $settings)
     {
         $this->bus = $bus;
+        $this->settings = $settings;
     }
 
     public function __invoke(ShowDiscussionController $controller, &$data, ServerRequestInterface $request)
@@ -36,6 +44,10 @@ class AddDiscussionViewHandler
          */
         $actor = $request->getAttribute('actor');
 
+        if ($this->settings->get('fsdv.ignore-crawlers') && $this->isCrawler($request->getHeader('User-Agent'))) {
+            return;
+        }
+
         /**
          * @var \Flarum\Discussion\Discussion $current_discussion
          */
@@ -44,5 +56,23 @@ class AddDiscussionViewHandler
         $current_discussion->save();
 
         $this->bus->dispatch(new DiscussionWasViewed($actor, $current_discussion, Helpers::getIpAddress(), Helpers::getUserAgentString()));
+    }
+
+    private function isCrawler(array $agents): bool
+    {
+        $detected = false;
+        $crawler = new CrawlerDetect();
+
+        foreach ($agents as $agent) {
+            if (empty($agent)) {
+                continue;
+            }
+
+            if ($crawler->isCrawler($agent)) {
+                $detected = true;
+            }
+        }
+
+        return $detected;
     }
 }
