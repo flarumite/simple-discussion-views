@@ -15,15 +15,12 @@ One of the Flarum forums I manage, needed a lightweight discussion view tracker,
 - Adds 1 event which developers can listen for: `DiscussionWasViewed` - includes accessor IP and UserAgent strings
 - Adds 1 new permission where people can (re)set the viewcount of a discussion (default to admins)
 - Uses `view_count` column created on the `discussions` table, so should not impact load performance
-
-### To-do
-- Identify known crawlers, don't increase the view count for these visits
-- Notify discussion author if their discussion is viewed more than {configurable} times
+- Identify known crawlers with an option to not increase the view count for their visit. Uses [jaybizzle/crawler-detect](https://github.com/JayBizzle/Crawler-Detect) for identification
 
 ### Installation
 
 ```sh
-composer require flarumite/simple-discussion-views
+composer require flarumite/simple-discussion-views:"*"
 ```
 
 ### Links
