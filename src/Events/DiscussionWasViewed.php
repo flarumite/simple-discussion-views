@@ -11,26 +11,36 @@
 
 namespace Flarumite\DiscussionViews\Events;
 
+use DateTime;
 use Flarum\Discussion\Discussion;
 use Flarum\User\User;
 
 class DiscussionWasViewed
 {
-    /** @var User */
+    /** 
+     * @var User 
+    */
     public $actor;
 
-    /** @var Discussion */
+    /** 
+     * @var Discussion
+    */
     public $discussion;
 
     /**
-     * @var string
+     * @var string|null
      */
     public $ip;
 
     /**
-     * @var string
+     * @var string|null
      */
     public $userAgent;
+
+    /**
+     * @var DateTime
+     */
+    public $timeStamp;
 
     /**
      * DiscussionWasViewed constructor.
@@ -38,11 +48,12 @@ class DiscussionWasViewed
      * @param User       $viewer
      * @param Discussion $discussion
      */
-    public function __construct(User $actor, Discussion $discussion, ?string $ip, ?string $userAgent)
+    public function __construct(User $actor, Discussion $discussion, ?string $ip, ?string $userAgent, DateTime $timeStamp)
     {
         $this->actor = $actor;
         $this->discussion = $discussion;
         $this->ip = $ip;
         $this->userAgent = $userAgent;
+        $this->timeStamp = $timeStamp;
     }
 }

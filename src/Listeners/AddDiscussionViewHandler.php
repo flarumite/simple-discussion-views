@@ -11,6 +11,7 @@
 
 namespace Flarumite\DiscussionViews\Listeners;
 
+use Carbon\Carbon;
 use Flarum\Api\Controller\ShowDiscussionController;
 use Flarum\Settings\SettingsRepositoryInterface;
 use Flarumite\DiscussionViews\Events\DiscussionWasViewed;
@@ -55,7 +56,7 @@ class AddDiscussionViewHandler
         $current_discussion->view_count++;
         $current_discussion->save();
 
-        $this->bus->dispatch(new DiscussionWasViewed($actor, $current_discussion, Helpers::getIpAddress(), Helpers::getUserAgentString()));
+        $this->bus->dispatch(new DiscussionWasViewed($actor, $current_discussion, Helpers::getIpAddress(), Helpers::getUserAgentString(), Carbon::now()));
     }
 
     private function isCrawler(array $agents): bool
