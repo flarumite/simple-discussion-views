@@ -17,14 +17,14 @@ use Flarum\User\User;
 
 class DiscussionWasViewed
 {
-    /** 
-     * @var User 
-    */
+    /**
+     * @var User
+     */
     public $actor;
 
-    /** 
+    /**
      * @var Discussion
-    */
+     */
     public $discussion;
 
     /**
