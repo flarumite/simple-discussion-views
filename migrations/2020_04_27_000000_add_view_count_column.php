@@ -9,13 +9,18 @@
  * file that was distributed with this source code.
  */
 
-use Flarum\Database\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Schema\Builder;
 
-return Migration::addColumns('discussions', [
-    'view_count' => [
-        'integer',
-        'null'     => false,
-        'default'  => 0,
-        'unsigned' => true,
-    ],
-]);
+return [
+    'up' => function (Builder $schema) {
+        if (!$schema->hasColumn('discussions', 'view_count')) {
+            $schema->table('discussions', function (Blueprint $table) {
+                $table->integer('view_count')->default(0)->unsigned();
+            });
+        }
+    },
+    'down' => function (Builder $schema) {
+        // no.
+    },
+];
