@@ -1,3 +1,4 @@
+import app from 'flarum/forum/app';
 import Modal from 'flarum/common/components/Modal';
 import Button from 'flarum/common/components/Button';
 import Stream from 'flarum/common/utils/Stream';
@@ -20,14 +21,9 @@ export default class ResetDiscussionViewsModal extends Modal {
                         <input className="FormControl" type="number" min="0" bidi={this.newViewsCount} />
                     </div>
                     <div className="Form-group">
-                        {Button.component(
-                            {
-                                className: 'Button Button--primary Button--block',
-                                type: 'submit',
-                                loading: this.loading,
-                            },
-                            app.translator.trans('flarumite-simple-discussion-views.forum.modal_resetviews.submit')
-                        )}
+                        <Button className="Button Button--primary" type="submit" loading={this.loading}>
+                            {app.translator.trans('flarumite-simple-discussion-views.forum.modal_resetviews.submit')}
+                        </Button>
                     </div>
                 </div>
             </div>

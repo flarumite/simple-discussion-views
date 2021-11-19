@@ -18,7 +18,7 @@ class AddAttributesBasedOnPermission
 {
     public function __invoke(DiscussionSerializer $serializer, Discussion $discussion, array $attributes): array
     {
-        if ($value = (bool) $serializer->getActor()->can('resetViews')) {
+        if ($value = (bool) $serializer->getActor()->can('resetViews', $discussion)) {
             $attributes['canReset'] = $value;
         }
 

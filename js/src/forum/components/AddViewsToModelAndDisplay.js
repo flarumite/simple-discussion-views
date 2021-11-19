@@ -6,7 +6,6 @@ import abbreviateNumber from 'flarum/common/utils/abbreviateNumber';
 
 export default function () {
     Discussion.prototype.views = Model.attribute('views');
-    Discussion.prototype.canReset = Model.attribute('canReset');
 
     extend(DiscussionListItem.prototype, 'infoItems', function (items) {
         const views = this.attrs.discussion.views();

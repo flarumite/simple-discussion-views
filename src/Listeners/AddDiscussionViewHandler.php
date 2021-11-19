@@ -13,6 +13,7 @@ namespace Flarumite\DiscussionViews\Listeners;
 
 use Carbon\Carbon;
 use Flarum\Api\Controller\ShowDiscussionController;
+use Flarum\Http\RequestUtil;
 use Flarum\Settings\SettingsRepositoryInterface;
 use Flarumite\DiscussionViews\Events\DiscussionWasViewed;
 use Flarumite\DiscussionViews\Helpers;
@@ -43,7 +44,7 @@ class AddDiscussionViewHandler
         /**
          * @var \Flarum\User\User
          */
-        $actor = $request->getAttribute('actor');
+        $actor = RequestUtil::getActor($request);
 
         if ($this->settings->get('fsdv.ignore-crawlers') && $this->isCrawler($request->getHeader('User-Agent'))) {
             return;
