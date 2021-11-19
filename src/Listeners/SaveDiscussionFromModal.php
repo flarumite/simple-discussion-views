@@ -17,7 +17,7 @@ class SaveDiscussionFromModal
 {
     public function handle(Saving $event)
     {
-        if (isset($event->data['attributes']['views'])) {
+        if (isset($event->data['attributes']['views']) && $event->actor->can('resetViews', $event->discussion)) {
             /**
              * @var \Flarum\Discussion\Discussion
              */
