@@ -7,15 +7,15 @@ import ItemList from 'flarum/common/utils/ItemList';
 import Discussion from 'flarum/common/models/Discussion';
 
 export default function () {
-    extend(DiscussionControls, 'moderationControls', function (items: ItemList, discussion : Discussion) {
-        if (discussion.canReset()) {
-            items.add(
-                'reset',
-                <Button icon="far fa-eye" onclick={() => app.modal.show(ResetDiscussionViewsModal, { discussion })}>
-                    {app.translator.trans('flarumite-simple-discussion-views.forum.discussion_controls.resetviews_button')}
-                </Button>,
-                -10
-            );
-        }
-    });
+  extend(DiscussionControls, 'moderationControls', function (items: ItemList, discussion: Discussion) {
+    if (discussion.canReset()) {
+      items.add(
+        'reset',
+        <Button icon="far fa-eye" onclick={() => app.modal.show(ResetDiscussionViewsModal, { discussion })}>
+          {app.translator.trans('flarumite-simple-discussion-views.forum.discussion_controls.resetviews_button')}
+        </Button>,
+        -10
+      );
+    }
+  });
 }

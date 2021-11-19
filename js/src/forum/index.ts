@@ -6,9 +6,9 @@ import Discussion from 'flarum/common/models/Discussion';
 import Model from 'flarum/common/Model';
 
 app.initializers.add('flarumite-simple-discussion-views', () => {
-Discussion.prototype.canReset = Model.attribute('canReset');
+  Discussion.prototype.canReset = Model.attribute('canReset');
 
-    AddPopularSort();
-    AddViewsToModelAndDisplay();
-    AddModerationControl();
+  AddPopularSort();
+  AddViewsToModelAndDisplay();
+  AddModerationControl();
 });
