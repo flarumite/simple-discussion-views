@@ -1,24 +1,19 @@
 .item-discussion-views {
   font-size: 14px;
-  float:right;
-}
+  position: absolute;
+  right: 37px;
+  color: var(--muted-color);
+  background: var(--control-bg);
+  text-decoration: none;
 
-@media (min-width: 768px)
-{
-  .item-discussion-views:before {
-    font-family: 'Font Awesome 5 Free';
-    font-size: inherit;
-    content: "\f06e";
-    margin-right: 5px;
+  .icon {
+    margin-right: 2px;
   }
 }
 
 @media (max-width: 767px) {
   .item-discussion-views
   {
-    background: #e8ecf3;
-    color: #667c99;
-    border-radius: 4px;
     font-size: 12px;
     padding: 2px 6px;
     position: absolute;
@@ -30,5 +25,9 @@
 @media @phone {
   .item-discussion-views {
     margin-right: -43px;
+
+    .icon {
+      display: none;
+    }
   }
 }
