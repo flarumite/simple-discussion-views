@@ -1,32 +1,28 @@
 .item-discussion-views {
   font-size: 14px;
   position: absolute;
-  right: 37px;
+  width: 65px;
+  right: 0;
   color: var(--muted-color);
   text-decoration: none;
 
-  .icon {
-    margin-right: 2px;
-  }
-}
-
-@media (max-width: 767px) {
-  .item-discussion-views
-  {
+  @media @phone {
     font-size: 12px;
     padding: 2px 6px;
     position: absolute;
     right: 58px;
     top: 35px;
+
     background: var(--control-bg);
-  }
-}
+    border-radius: var(--border-radius);
 
-@media @phone {
-  .item-discussion-views {
     margin-right: -43px;
+  }
 
-    .icon {
+  .icon {
+    margin-right: 2px;
+
+    @media @phone {
       display: none;
     }
   }
