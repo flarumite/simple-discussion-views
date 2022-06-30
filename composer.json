@@ -3,7 +3,7 @@
   "description": "Add view counts to discussions",
   "type": "flarum-extension",
   "require": {
-    "flarum/core": "^1.2.0",
+    "flarum/core": "^1.3.1",
     "jaybizzle/crawler-detect": "^1.2"
   },
   "license": "MIT",

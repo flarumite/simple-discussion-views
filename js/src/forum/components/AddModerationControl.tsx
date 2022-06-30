@@ -5,9 +5,10 @@ import DiscussionControls from 'flarum/forum/utils/DiscussionControls';
 import ResetDiscussionViewsModal from './ResetDiscussionViewsModal';
 import ItemList from 'flarum/common/utils/ItemList';
 import Discussion from 'flarum/common/models/Discussion';
+import type Mithril from 'mithril';
 
 export default function () {
-  extend(DiscussionControls, 'moderationControls', function (items: ItemList, discussion: Discussion) {
+  extend(DiscussionControls, 'moderationControls', function (items: ItemList<Mithril.Children>, discussion: Discussion) {
     if (discussion.canReset()) {
       items.add(
         'reset',

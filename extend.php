@@ -44,4 +44,7 @@ return [
 
     (new Extend\ApiController(ListDiscussionsController::class))
         ->addSortField('view_count'),
+    
+    (new Extend\Settings())
+        ->default('fsdv.ignore-crawlers', true),
 ];
