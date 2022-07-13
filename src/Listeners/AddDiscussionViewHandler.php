@@ -46,7 +46,9 @@ class AddDiscussionViewHandler
 
     public function __invoke(ShowDiscussionController $controller, &$data, ServerRequestInterface $request)
     {
-        if (static::$enabled === false) return;
+        if (static::$enabled === false) {
+            return;
+        }
 
         /**
          * @var \Flarum\User\User
