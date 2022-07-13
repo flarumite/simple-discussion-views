@@ -32,6 +32,11 @@ class AddDiscussionViewHandler
      * @var SettingsRepositoryInterface
      */
     public $settings;
+    /**
+     * @var bool
+     * @info Allows disabling the handler ahead of any internal API calls.
+     */
+    public static $enabled = true;
 
     public function __construct(Dispatcher $bus, SettingsRepositoryInterface $settings)
     {
@@ -41,6 +46,10 @@ class AddDiscussionViewHandler
 
     public function __invoke(ShowDiscussionController $controller, &$data, ServerRequestInterface $request)
     {
+        if (static::$enabled === false) {
+            return;
+        }
+
         /**
          * @var \Flarum\User\User
          */
