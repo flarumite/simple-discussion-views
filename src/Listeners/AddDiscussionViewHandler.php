@@ -13,6 +13,7 @@ namespace Flarumite\DiscussionViews\Listeners;
 
 use Carbon\Carbon;
 use Flarum\Api\Controller\ShowDiscussionController;
+use Flarum\Extension\ExtensionManager;
 use Flarum\Http\RequestUtil;
 use Flarum\Settings\SettingsRepositoryInterface;
 use Flarumite\DiscussionViews\Events\DiscussionWasViewed;
@@ -32,15 +33,23 @@ class AddDiscussionViewHandler
      * @var SettingsRepositoryInterface
      */
     public $settings;
+    /**
+     ** @var ExtensionManager
+     */
+    private $extensions;
 
-    public function __construct(Dispatcher $bus, SettingsRepositoryInterface $settings)
+    public function __construct(Dispatcher $bus, SettingsRepositoryInterface $settings, ExtensionManager $extensions)
     {
         $this->bus = $bus;
         $this->settings = $settings;
+        $this->extensions = $extensions;
     }
 
     public function __invoke(ShowDiscussionController $controller, &$data, ServerRequestInterface $request)
     {
+        // Ignore tracking for realtime, to stop bumping views.
+        if (isset($request->getQueryParams()['realtime']) && $this->extensions->isEnabled('blomstra-realtime')) return;
+
         /**
          * @var \Flarum\User\User
          */
