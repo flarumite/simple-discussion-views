@@ -33,7 +33,10 @@ class AddDiscussionViewHandler
      * @var SettingsRepositoryInterface
      */
     public $settings;
-    private ExtensionManager $extensions;
+    /**
+     ** @var ExtensionManager
+     */
+    private $extensions;
 
     public function __construct(Dispatcher $bus, SettingsRepositoryInterface $settings, ExtensionManager $extensions)
     {
