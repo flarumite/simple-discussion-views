@@ -48,7 +48,9 @@ class AddDiscussionViewHandler
     public function __invoke(ShowDiscussionController $controller, &$data, ServerRequestInterface $request)
     {
         // Ignore tracking for realtime, to stop bumping views.
-        if (isset($request->getQueryParams()['realtime']) && $this->extensions->isEnabled('blomstra-realtime')) return;
+        if (isset($request->getQueryParams()['realtime']) && $this->extensions->isEnabled('blomstra-realtime')) {
+            return;
+        }
 
         /**
          * @var \Flarum\User\User
