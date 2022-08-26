@@ -63,8 +63,7 @@ class AddDiscussionViewHandler
          * @var \Flarum\Discussion\Discussion $current_discussion
          */
         $current_discussion = $data;
-        $current_discussion->view_count++;
-        $current_discussion->save();
+        $current_discussion->increment('view_count', 1);
 
         $this->bus->dispatch(new DiscussionWasViewed($actor, $current_discussion, Helpers::getIpAddress(), Helpers::getUserAgentString(), Carbon::now()));
     }
