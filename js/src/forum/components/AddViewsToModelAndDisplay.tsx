@@ -12,6 +12,11 @@ export default function () {
 
   extend(DiscussionListItem.prototype, 'infoItems', function (items: ItemList<Mithril.Children>) {
     const views = this.attrs.discussion.views();
-    items.add('discussion-views', <span>{icon('far fa-eye')} {abbreviateNumber(views)}</span>);
+    items.add(
+      'discussion-views',
+      <span>
+        {icon('far fa-eye')} {abbreviateNumber(views)}
+      </span>
+    );
   });
 }
