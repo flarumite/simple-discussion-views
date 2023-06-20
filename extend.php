@@ -9,23 +9,20 @@
  * file that was distributed with this source code.
  */
 
-use Flarum\Api\Controller\ListDiscussionsController;
-use Flarum\Api\Controller\ShowDiscussionController;
+use Flarum\Api\Controller;
 use Flarum\Api\Serializer\DiscussionSerializer;
 use Flarum\Database\AbstractModel;
 use Flarum\Discussion\Event\Saving;
 use Flarum\Extend;
-use Flarum\Extend\Frontend;
 use Flarumite\DiscussionViews\AddAttributesBasedOnPermission;
 use Flarumite\DiscussionViews\Listeners;
-use Flarumite\DiscussionViews\Listeners\AddDiscussionViewHandler;
 
 return [
-    (new Frontend('forum'))
+    (new Extend\Frontend('forum'))
         ->css(__DIR__.'/resources/less/forum.less')
         ->js(__DIR__.'/js/dist/forum.js'),
 
-    (new Frontend('admin'))
+    (new Extend\Frontend('admin'))
         ->js(__DIR__.'/js/dist/admin.js'),
 
     new Extend\Locales(__DIR__.'/resources/locale'),
@@ -39,10 +36,10 @@ return [
         })
         ->attributes(AddAttributesBasedOnPermission::class),
 
-    (new Extend\ApiController(ShowDiscussionController::class))
-        ->prepareDataForSerialization(AddDiscussionViewHandler::class),
+    (new Extend\ApiController(Controller\ShowDiscussionController::class))
+        ->prepareDataForSerialization(Listeners\AddDiscussionViewHandler::class),
 
-    (new Extend\ApiController(ListDiscussionsController::class))
+    (new Extend\ApiController(Controller\ListDiscussionsController::class))
         ->addSortField('view_count'),
 
     (new Extend\Settings())
