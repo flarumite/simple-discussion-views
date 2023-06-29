@@ -9,13 +9,15 @@
  * file that was distributed with this source code.
  */
 
+namespace Flarumite\DiscussionViews;
+
 use Flarum\Api\Controller;
 use Flarum\Api\Serializer\DiscussionSerializer;
 use Flarum\Database\AbstractModel;
 use Flarum\Discussion\Event\Saving;
+use Flarum\Discussion\Filter\DiscussionFilterer;
+use Flarum\Discussion\Search\DiscussionSearcher;
 use Flarum\Extend;
-use Flarumite\DiscussionViews\AddAttributesBasedOnPermission;
-use Flarumite\DiscussionViews\Listeners;
 
 return [
     (new Extend\Frontend('forum'))
@@ -44,4 +46,13 @@ return [
 
     (new Extend\Settings())
         ->default('fsdv.ignore-crawlers', true),
+
+    (new Extend\ServiceProvider())
+        ->register(Provider\DiscussionViewsProvider::class),
+
+    (new Extend\SimpleFlarumSearch(DiscussionSearcher::class))
+        ->addGambit(Search\PopularFilterGambit::class),
+
+    (new Extend\Filter(DiscussionFilterer::class))
+        ->addFilter(Search\PopularFilterGambit::class),
 ];
