@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of flarumite/simple-discussion-views.
+ *
+ * Copyright (c) 2020 Flarumite.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Flarumite\DiscussionViews\Search;
 
 use Flarum\Filter\FilterInterface;
@@ -43,7 +52,7 @@ class PopularFilterGambit extends AbstractRegexGambit implements FilterInterface
     /**
      * @param SearchState $search
      * @param array       $matches
-     * @param $negate
+     * @param             $negate
      */
     protected function conditions(SearchState $search, array $matches, $negate)
     {
