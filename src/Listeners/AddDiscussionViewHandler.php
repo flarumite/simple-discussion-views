@@ -32,6 +32,7 @@ class AddDiscussionViewHandler
      * @var SettingsRepositoryInterface
      */
     public $settings;
+    
     /**
      * @var bool
      *
