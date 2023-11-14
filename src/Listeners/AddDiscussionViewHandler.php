@@ -40,7 +40,7 @@ class AddDiscussionViewHandler
 
     /**
      * Allows disabling the handler ahead of any internal API calls.
-     * 
+     *
      * @var bool
      */
     public static $enabled = true;
