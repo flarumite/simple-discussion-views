@@ -45,7 +45,7 @@ class DiscussionWasViewed
     /**
      * DiscussionWasViewed constructor.
      *
-     * @param User       $viewer
+     * @param User       $actor
      * @param Discussion $discussion
      */
     public function __construct(User $actor, Discussion $discussion, ?string $ip, ?string $userAgent, DateTime $timeStamp)

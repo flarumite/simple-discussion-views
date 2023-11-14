@@ -34,16 +34,22 @@ class AddDiscussionViewHandler
     public $settings;
 
     /**
-     * @var bool
+     * @var CrawlerDetect
+     */
+    public $crawler;
+
+    /**
+     * Allows disabling the handler ahead of any internal API calls.
      *
-     * @info Allows disabling the handler ahead of any internal API calls.
+     * @var bool
      */
     public static $enabled = true;
 
-    public function __construct(Dispatcher $bus, SettingsRepositoryInterface $settings)
+    public function __construct(Dispatcher $bus, SettingsRepositoryInterface $settings, CrawlerDetect $crawler)
     {
         $this->bus = $bus;
         $this->settings = $settings;
+        $this->crawler = $crawler;
     }
 
     public function __invoke(ShowDiscussionController $controller, &$data, ServerRequestInterface $request)
@@ -52,9 +58,6 @@ class AddDiscussionViewHandler
             return;
         }
 
-        /**
-         * @var \Flarum\User\User
-         */
         $actor = RequestUtil::getActor($request);
 
         if ($this->settings->get('fsdv.ignore-crawlers') && $this->isCrawler($request->getHeader('User-Agent'))) {
@@ -73,14 +76,13 @@ class AddDiscussionViewHandler
     private function isCrawler(array $agents): bool
     {
         $detected = false;
-        $crawler = new CrawlerDetect();
 
         foreach ($agents as $agent) {
             if (empty($agent)) {
                 continue;
             }
 
-            if ($crawler->isCrawler($agent)) {
+            if ($this->crawler->isCrawler($agent)) {
                 $detected = true;
             }
         }

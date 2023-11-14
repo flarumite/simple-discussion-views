@@ -13,7 +13,7 @@ namespace Flarumite\DiscussionViews;
 
 use Flarum\Api\Controller;
 use Flarum\Api\Serializer\DiscussionSerializer;
-use Flarum\Database\AbstractModel;
+use Flarum\Discussion\Discussion;
 use Flarum\Discussion\Event\Saving;
 use Flarum\Discussion\Filter\DiscussionFilterer;
 use Flarum\Discussion\Search\DiscussionSearcher;
@@ -29,11 +29,14 @@ return [
 
     new Extend\Locales(__DIR__.'/resources/locale'),
 
+    (new Extend\Model(Discussion::class))
+        ->cast('view_count', 'int'),
+
     (new Extend\Event())
         ->listen(Saving::class, Listeners\SaveDiscussionFromModal::class),
 
     (new Extend\ApiSerializer(DiscussionSerializer::class))
-        ->attribute('views', function (DiscussionSerializer $serializer, AbstractModel $discussion) {
+        ->attribute('views', function (DiscussionSerializer $serializer, Discussion $discussion) {
             return $discussion->view_count;
         })
         ->attributes(AddAttributesBasedOnPermission::class),
