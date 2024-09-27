@@ -3,6 +3,7 @@
 vendor
 composer.lock
 js/node_modules
+js/coverage-ts
 .phpunit.result.cache
 tests/coverage
 .DS_Store
