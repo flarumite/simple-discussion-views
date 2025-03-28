@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Flarumite\DiscussionViews\Search;
+namespace FoF\DiscussionViews\Search;
 
 use Flarum\Filter\FilterInterface;
 use Flarum\Filter\FilterState;

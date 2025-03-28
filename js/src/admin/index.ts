@@ -1,12 +1,12 @@
 import app from 'flarum/admin/app';
 
-app.initializers.add('flarumite-simple-discussion-views', () => {
+app.initializers.add('fof-discussion-views', () => {
   app.extensionData
-    .for('flarumite-simple-discussion-views')
+    .for('fof-discussion-views')
     .registerPermission(
       {
         icon: 'far fa-eye',
-        label: app.translator.trans('flarumite-simple-discussion-views.admin.permissions.reset_views_label'),
+        label: app.translator.trans('fof-discussion-views.admin.permissions.reset_views_label'),
         permission: 'discussion.resetViews',
       },
       'moderate'
@@ -14,6 +14,6 @@ app.initializers.add('flarumite-simple-discussion-views', () => {
     .registerSetting({
       setting: 'fsdv.ignore-crawlers',
       type: 'boolean',
-      label: app.translator.trans('flarumite-simple-discussion-views.admin.settings.ignore_crawlers'),
+      label: app.translator.trans('fof-discussion-views.admin.settings.ignore_crawlers'),
     });
 });

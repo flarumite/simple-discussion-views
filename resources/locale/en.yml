@@ -4,7 +4,7 @@ core:
       popular_button: Popular
       unpopular_button: Unpopular
 
-flarumite-simple-discussion-views:
+fof-discussion-views:
   forum:
     modal_resetviews:
       title: Reset discussion view count

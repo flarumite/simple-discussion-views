@@ -1,4 +1,4 @@
-name: Flarumite Simple Discussion Views JS
+name: FoF Discussion Views JS
 
 on: [workflow_dispatch, push, pull_request]
 

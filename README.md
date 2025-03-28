@@ -1,8 +1,7 @@
+# FoF Discussion Views
+
 [![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/flarumite/simple-discussion-views/blob/master/LICENSE) [![Latest Stable Version](https://img.shields.io/packagist/v/flarumite/simple-discussion-views.svg)](https://packagist.org/packages/flarumite/simple-discussion-views) [![Total Downloads](https://img.shields.io/packagist/dt/flarumite/simple-discussion-views.svg)](https://packagist.org/packages/flarumite/simple-discussion-views)
 
-
-
-# Flarumite Simple Discussion Views
 
 This is a maintained fork of [michaelbelgium/flarum-discussion-views](https://github.com/MichaelBelgium/flarum-discussion-views), largely based on the now removed `v0.1.0-beta.8.3` tagged release.
 

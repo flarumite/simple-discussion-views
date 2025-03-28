@@ -1,5 +1,5 @@
 {
-    "name": "flarumite/simple-discussion-views",
+    "name": "fof/discussion-views",
     "description": "Add view counts to discussions",
     "type": "flarum-extension",
     "require": {
@@ -10,27 +10,27 @@
     "authors": [
         {
             "name": "IanM",
-            "homepage": "https://discuss.flarum.org/u/ianm",
+            "email": "ian@flarum.org",
             "role": "Developer"
         }
     ],
     "support": {
-        "issues": "https://github.com/flarumite/simple-discussion-views/issues",
-        "source": "https://github.com/flarumite/simple-discussion-views",
+        "issues": "https://github.com/friendsofflarum/discussion-views/issues",
+        "source": "https://github.com/friendsofflarum/discussion-views",
         "forum": "https://discuss.flarum.org/d/24002"
     },
     "autoload": {
         "psr-4": {
-            "Flarumite\\DiscussionViews\\": "src/"
+            "FoF\\DiscussionViews\\": "src/"
         }
     },
     "extra": {
         "flarum-extension": {
-            "title": "Flarumite Simple Discussion Views",
+            "title": "FoF Discussion Views",
             "category": "feature",
             "icon": {
                 "name": "far fa-eye",
-                "backgroundColor": "#008000",
+                "backgroundColor": "#e74c3c",
                 "color": "#fff"
             }
         },
@@ -42,6 +42,9 @@
     },
     "conflict": {
         "michaelbelgium/flarum-discussion-views": "*"
+    },
+    "replace": {
+        "flarumite/simple-discussion-views": "*"
     },
     "require-dev": {
         "flarum/phpstan": "*"

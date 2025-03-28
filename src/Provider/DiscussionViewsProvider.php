@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Flarumite\DiscussionViews\Provider;
+namespace FoF\DiscussionViews\Provider;
 
 use Flarum\Foundation\AbstractServiceProvider;
 

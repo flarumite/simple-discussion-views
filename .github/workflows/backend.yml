@@ -1,4 +1,4 @@
-name: Flarumite Simple Discussion Views PHP
+name: FoF Discussion Views PHP
 
 on: [workflow_dispatch, push, pull_request]
 

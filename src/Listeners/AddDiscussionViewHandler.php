@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Flarumite\DiscussionViews\Listeners;
+namespace FoF\DiscussionViews\Listeners;
 
 use Carbon\Carbon;
 use Flarum\Api\Controller\ShowDiscussionController;
 use Flarum\Http\RequestUtil;
 use Flarum\Settings\SettingsRepositoryInterface;
-use Flarumite\DiscussionViews\Events\DiscussionWasViewed;
-use Flarumite\DiscussionViews\Helpers;
+use FoF\DiscussionViews\Events\DiscussionWasViewed;
+use FoF\DiscussionViews\Helpers;
 use Illuminate\Contracts\Events\Dispatcher;
 use Jaybizzle\CrawlerDetect\CrawlerDetect;
 use Psr\Http\Message\ServerRequestInterface;

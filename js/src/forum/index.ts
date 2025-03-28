@@ -5,7 +5,7 @@ import AddModerationControl from './components/AddModerationControl';
 
 export { default as extend } from './extend';
 
-app.initializers.add('flarumite-simple-discussion-views', () => {
+app.initializers.add('fof-discussion-views', () => {
   AddPopularSort();
   AddViewsToModelAndDisplay();
   AddModerationControl();

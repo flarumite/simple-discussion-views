@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Flarumite\DiscussionViews\Listeners;
+namespace FoF\DiscussionViews\Listeners;
 
 use Flarum\Discussion\Event\Saving;
 

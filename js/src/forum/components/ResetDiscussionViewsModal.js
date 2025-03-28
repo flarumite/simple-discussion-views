@@ -17,12 +17,12 @@ export default class ResetDiscussionViewsModal extends Modal {
       <div className="Modal-body">
         <div className="Form Form--centered">
           <div className="Form-group">
-            <label>{app.translator.trans('flarumite-simple-discussion-views.forum.modal_resetviews.label')}</label>
+            <label>{app.translator.trans('fof-discussion-views.forum.modal_resetviews.label')}</label>
             <input className="FormControl" type="number" min="0" bidi={this.newViewsCount} />
           </div>
           <div className="Form-group">
             <Button className="Button Button--primary" type="submit" loading={this.loading}>
-              {app.translator.trans('flarumite-simple-discussion-views.forum.modal_resetviews.submit')}
+              {app.translator.trans('fof-discussion-views.forum.modal_resetviews.submit')}
             </Button>
           </div>
         </div>
@@ -31,7 +31,7 @@ export default class ResetDiscussionViewsModal extends Modal {
   }
 
   title() {
-    return app.translator.trans('flarumite-simple-discussion-views.forum.modal_resetviews.title');
+    return app.translator.trans('fof-discussion-views.forum.modal_resetviews.title');
   }
 
   className() {

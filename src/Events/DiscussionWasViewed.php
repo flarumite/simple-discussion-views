@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Flarumite\DiscussionViews\Events;
+namespace FoF\DiscussionViews\Events;
 
 use DateTime;
 use Flarum\Discussion\Discussion;

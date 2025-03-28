@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Flarumite\DiscussionViews;
+namespace FoF\DiscussionViews;
 
 use Flarum\Api\Controller;
 use Flarum\Api\Serializer\DiscussionSerializer;

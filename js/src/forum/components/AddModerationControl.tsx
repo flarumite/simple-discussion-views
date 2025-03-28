@@ -13,7 +13,7 @@ export default function () {
       items.add(
         'reset',
         <Button icon="far fa-eye" onclick={() => app.modal.show(ResetDiscussionViewsModal, { discussion })}>
-          {app.translator.trans('flarumite-simple-discussion-views.forum.discussion_controls.resetviews_button')}
+          {app.translator.trans('fof-discussion-views.forum.discussion_controls.resetviews_button')}
         </Button>,
         -10
       );
